@@ -2,29 +2,30 @@
 #include <cmath>
 #include <iostream>
 class RegularPolygon {
-	int n, angle;
+	double n, angle,apothem;
 public:
 	RegularPolygon(int a) {
 		n = a;
 		angle = M_PI / n;
 	};
-	double apothem = n / (2 * tan(angle));
-	
-	void area(double bikenar) {  
+	void area(double bikenar) {
 		double alan;
-		alan = n*bikenar*apothem/2;
-		std::cout << alan <<std::endl;
+		angle = M_PI / n;
+		apothem = n / (2 * tan(angle));
+		alan = n * bikenar * apothem / 2;
+		std::cout << alan << std::endl;
 	};
 	void length(double alan) {
 		double kenar;
-		kenar = 2*alan/(n*apothem);
-		std::cout << kenar <<std::endl;
+		angle = M_PI / n;
+		apothem = n / (2 * tan(angle));
+		kenar = 2 * alan / (n * apothem);
+		std::cout << kenar << std::endl;
 	}
 };
 int main() {
 	RegularPolygon square(4);
 	square.area(4);
 	square.length(16);
-	
 	return 0;
 }
