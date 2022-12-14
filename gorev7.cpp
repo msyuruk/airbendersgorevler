@@ -5,11 +5,10 @@ int main(int argNo, char* argarray[]) {
 	int carpan = (int)argarray[1];
 	int satirsayisi = (int)argarray[2];
 	int arrayindex = 3;
-	int matrisElementNo = (sizeof(argarray)/sizeof(char))-3;
 	int rowVectorElemanNo = (argNo - 3)/satirsayisi;
-	std::vector<int>kucukvektor;
-	std::vector<std::vector<int>>emirhan;
-	for (int i = 0; i < satirsayisi; i++)
+	std::vector<float>kucukvektor;
+	std::vector<std::vector<float>>emirhan;
+	for (int i = 0; i < argNo-3; i++)
 	{
 		for (int j = 0; j < rowVectorElemanNo; j++)
 		{
@@ -27,7 +26,7 @@ int main(int argNo, char* argarray[]) {
 		emirhan.push_back(kucukvektor);
 	}
 
-	for (int i = 0; i < satirsayisi; i++)
+	for (int i = 0; i < argNo-3; i++)
 	{
 		for(int j=0;j<rowVectorElemanNo;j++)
 		{
@@ -35,6 +34,5 @@ int main(int argNo, char* argarray[]) {
 		}
 		std::cout << std::endl;
 	}
-	std::cout << "Test" << std::endl;
 	return 0;
 }
